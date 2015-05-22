@@ -4,7 +4,20 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body>
+<body ng-app="reditgam" 
+ 	ng-controller="mainCtrl">
+	
+	<div ng-repeat="post in posts">
+		{{post}}
+ 	</div>
 	<h1>Hola Angular</h1>
+
+	<script
+		type="text/javascript"
+		src="./vendor/angular/angular.js">
+	</script>
+	<script
+		type="text/javascript"
+		src="./script/app.js"></script>
 </body>
 </html>
