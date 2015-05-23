@@ -1,5 +1,26 @@
+// Inyectadon el modulo de ui-router
+// como parametro del arreglo de objetos
+// del modulo
 var modulo1 = 
-	angular.module("reditgam",[]);
+	angular.module("reeditgam",[]);
+	angular.module("reeditgam",['ui.router']);
+
+// Configurando las rutas
+// Recibe un arreglo de elementos
+modulo1.config(
+	['$stateProvider',
+	'$urlRouterProvider',
+	function($stateProvider, $urlRouterProvider){
+		// Iniciando rutina de configuracion
+		$stateProvider.state('home',{
+			//Definiendo estado como un objeto
+			url:"/home", // Url que define el estado
+			templateUrl: "/home.html", // Plantilla base para el estado
+			controller: 'mainCtrl'
+		});
+		// Url por defecto
+		$urlRouterProvider.otherwise('home');
+	}]);
 
 	// Creando un servicio del tipo factory
 modulo1.factory('posts',[function(){
