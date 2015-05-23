@@ -14,4 +14,10 @@ modulo1.controller("mainCtrl",[
 		 {title: "Post 5", upvotes: 3},
 		 {title: "Post 6", upvotes: 5}];
 
+		 // Metodo del controlador
+		 $scope.addPost = function(){
+		 	$scope.posts.push(
+		 		{title:"Nuevo Post",
+		 		 upvotes: 0});
+		 };
 	}]);
