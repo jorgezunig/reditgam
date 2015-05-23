@@ -1,5 +1,5 @@
 var modulo1 = 
-	angular.module("reditgam",['ui.router']);
+	angular.module("reditgam",['ui.router','hSweetAlert']);
 
 	 // Configurando las rutas
  // Recibe un arreglo de elementos
@@ -59,8 +59,8 @@ modulo1.factory('posts',[function(){
 // dependency injection
 // Creando controlador mainCtrl
 modulo1.controller("mainCtrl",[
-		'$scope','posts', // Inyectando factory post
-	function($scope, posts){
+		'$scope','posts','sweet', // Inyectando factory post
+	function($scope, posts, sweet){
 		$scope.test = "Hola Angular";
 	// Modelo al cual se le asigna
  		// el resultado del factory
@@ -70,7 +70,8 @@ modulo1.controller("mainCtrl",[
 		 $scope.addPost = function(){
 		 	if(!$scope.title || $scope.title === "")
 		 	{
-		 		alert("No se permite postear titulos vacios");
+		 		//alert("No se permite postear titulos vacios");
+				 sweet.show('No se permite postear titulos vacios');
 		 		return;
 		 	}
  		 	$scope.posts.push(
