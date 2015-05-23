@@ -7,11 +7,16 @@
 <body ng-app="reditgam" 
  	ng-controller="mainCtrl">
 	
-	<div ng-repeat="post in posts">
-		{{post}}
+	<div ng-repeat="post in posts | orderBy: '-upvotes'">
+	{{post.title}} - Likes: {{post.upvotes}}
  	</div>
-	<h1>Hola Angular</h1>
+	
 
+
+
+
+	<!-- Cargando Librerias -->
+ 	<!-- Es buena practica al final -->
 	<script
 		type="text/javascript"
 		src="./vendor/angular/angular.js">
